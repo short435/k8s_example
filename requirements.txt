@@ -1,0 +1,7 @@
+# Created by Zhen-Yi Yu on 2024/03/19
+
+Flask
+gunicorn
+pytest
+requests
+urllib3==1.26.6
