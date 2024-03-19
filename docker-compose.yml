@@ -1,0 +1,16 @@
+#gunicorn app:app --timeout 600 -w 2 --threads 2 -b 0.0.0.0:8000
+
+version: "1.0"
+services:
+  k8s_example:
+    image: k8s_example
+    build:
+      dockerfile: Dockerfile
+    ports:
+      - 8000:8000
+    environment:
+      SERVER_ENV: Test
+    # volumes:
+      # - ./tmp/:/tmp/
+    command: gunicorn service:app --timeout 600 -w 2 --threads 2 -b 0.0.0.0:8000
+    # command: python service.py
